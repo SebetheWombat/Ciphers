@@ -11,9 +11,10 @@
 			<li><a href="/caesar">Caesar</a></li>
 		</ul>
 	</header>
-	<h1>Atbash Cipher!</h1>
-	<form id="toEncrypt" method="post" action="/">
+	<h1>Caesar Cipher!</h1>
+	<form id="toEncrypt" method="post" action="/caesar">
 		<textarea name="encrypt" form= "toEncrypt"></textarea>
+		<input type="number" name="shift">
 		<input type="submit" value="Encrypt!">
 	</form>
 	<div><%= @encrypted %></div>
