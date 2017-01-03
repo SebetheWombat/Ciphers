@@ -1,0 +1,11 @@
+<%= erb :header %>
+	<h1>Rail Fence Cipher</h1>
+	<form id="railfence" method="post" action="/railfence">
+		<textarea name="encrypt" form="railfence"></textarea>
+		<label>Rows</label>
+		<input type="number" name="rows" value="3">
+		<input type="submit" value="Encrypt!">
+	</form>
+	<div><%= @encrypted %></div>
+</body>
+</html>

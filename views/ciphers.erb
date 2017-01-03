@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Ciphun</title>
-	<meta charset="utf-8">
-</head>
-<body>
-	<header>
-		<ul>
-			<li><a href="/">Atbash</a></li>
-			<li><a href="/caesar">Caesar</a></li>
-			<li><a href="/vigenere">Vigenére</a></li>
-		</ul>
-	</header>
+<%= erb :header %>
 	<h1>Atbash Cipher!</h1>
-	<form id="toEncrypt" method="post" action="/">
-		<textarea name="encrypt" form= "toEncrypt"></textarea>
+	<form id="atbash" method="post" action="/">
+		<textarea name="encrypt" form= "atbash"></textarea>
 		<input type="submit" value="Encrypt!">
 	</form>
 	<div><%= @encrypted %></div>
