@@ -1,9 +1,9 @@
 <%= erb :header %>
-	<h1>Atbash Cipher!</h1>
+	<h1>Atbash Cipher</h1>
+
 	<form id="atbash" method="post" action="/">
-		<textarea name="encrypt" form= "atbash"></textarea>
-		<input type="submit" value="Encrypt!">
-	</form>
-	<div><%= @encrypted %></div>
-</body>
-</html>
+		<div class="form-group">
+			<label>Enter your seceret message here!</label>
+			<textarea name="encrypt" form="atbash" class="form-control msg-io"></textarea>
+		</div>
+<%= erb :footer %>

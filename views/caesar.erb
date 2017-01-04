@@ -1,11 +1,12 @@
 <%= erb :header %>
-	<h1>Caesar Cipher!</h1>
+	<h1>Caesar Cipher</h1>
 	<form id="caesar" method="post" action="/caesar">
-		<textarea name="encrypt" form= "caesar"></textarea>
-		<label>Key</label>
-		<input type="number" name="shift" value="3">
-		<input type="submit" value="Encrypt!">
-	</form>
-	<div><%= @encrypted %></div>
-</body>
-</html>
+		<div class="form-group">
+			<label>Enter your seceret message here!</label>
+			<textarea name="encrypt" form= "caesar" class="form-control msg-io"></textarea>
+		</div>
+		<div class="form-group">
+			<label>Key</label>
+			<input type="number" name="shift" class="form-control msg-io" value="3">
+		</div>
+<%= erb :footer %>
