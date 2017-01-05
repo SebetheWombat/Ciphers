@@ -4,11 +4,13 @@ require_relative("lib/atbash.rb")
 require_relative("lib/caesar.rb")
 require_relative("lib/vigenere.rb")
 require_relative("lib/railfence.rb")
+require_relative("lib/beaufort.rb")
 
 caesar = Caesar.new()
 atbash = Atbash.new()
 vigenere = Vigenere.new()
 railfence = RailFence.new()
+beaufort = Beaufort.new(vigenere,atbash)
 
 get '/' do
 	erb :ciphers
@@ -35,6 +37,18 @@ post '/caesar' do
 	erb :caesar
 end
 
+get '/beaufort' do
+	erb :beaufort
+end
+
+post '/beaufort' do
+	msg = params['encrypt']
+	key = params['key']
+	if msg != nil
+		@encrypted = beaufort.encrypt(msg, key)
+	end
+	erb :beaufort
+end
 get '/vigenere' do
 	erb :vigenere
 end
