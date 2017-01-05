@@ -1,0 +1,3 @@
+#Ciphers 
+
+A simple little Sinatra website built for the purpose of exploring historical ciphers. Currently users can encrypt messages using the substitution ciphers: [Atbash](https://github.com/SebetheWombat/Ciphers/blob/master/lib/atbash.rb), [Caesar](https://github.com/SebetheWombat/Ciphers/blob/master/lib/caesar.rb), and [Vigenére](https://github.com/SebetheWombat/Ciphers/blob/master/lib/vigenere.rb), or the transposition [Rail-fence](https://github.com/SebetheWombat/Ciphers/blob/master/lib/railfence.rb) cipher. 
