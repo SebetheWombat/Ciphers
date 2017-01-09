@@ -1,5 +1,12 @@
 class Vigenere
+	def validate_key(key)
+		key.gsub!(" ", "")
+		return false if key.match(/[^a-zA-Z]/)
+		return true
+	end
+
 	def encrypt(msg, key)
+		
 		key = key.downcase.split("").map { |c| c.ord - 97}
 		encrypted = []
 		i = 0

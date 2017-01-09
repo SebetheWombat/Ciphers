@@ -30,8 +30,9 @@ end
 
 post '/caesar' do
 	msg = params['encrypt']
-	shifter = params['shift'].to_i
-	if msg != nil
+	shifter = params['shift']
+	if shifter != ""
+		shifter = shifter.to_i
 		@encrypted = caesar.encrypt(msg, shifter)
 	end
 	erb :caesar
@@ -44,8 +45,10 @@ end
 post '/beaufort' do
 	msg = params['encrypt']
 	key = params['key']
-	if msg != nil
-		@encrypted = beaufort.encrypt(msg, key)
+	if key != ""
+		if vigenere.validate_key(key)
+			@encrypted = beaufort.encrypt(msg, key)
+		end
 	end
 	erb :beaufort
 end
@@ -56,8 +59,10 @@ end
 post '/vigenere' do
 	msg = params['encrypt']
 	key = params['key']
-	if msg != nil
-		@encrypted = vigenere.encrypt(msg, key)
+	if key != ""
+		if vigenere.validate_key(key)
+			@encrypted = vigenere.encrypt(msg, key)
+		end
 	end
 	erb :vigenere
 end
@@ -68,8 +73,9 @@ end
 
 post '/railfence' do
 	msg = params['encrypt']
-	rows = params['rows'].to_i
-	if msg != nil
+	rows = params['rows']
+	if rows != ""
+		rows = rows.to_i
 		@encrypted = railfence.encrypt(msg, rows)
 	end
 	erb :railfence
