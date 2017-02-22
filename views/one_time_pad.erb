@@ -1,0 +1,13 @@
+<%= erb :header %>
+	<h1>The One Time Pad</h1>
+	<form id="otp" method = "post" action = "/one_time_pad">
+		<div class="form-group">
+			<label>Enter your seceret message here!</label>
+			<textarea name="encrypt" form="otp" class="form-control msg-io"></textarea>
+		</div>
+		<div class="form-group">
+			<label>Your auto-generated random key:</label>
+			<div class="msg-io" id="randkey"><%= @key %></div>
+		</div>
+
+<%= erb :footer %>

@@ -5,12 +5,14 @@ require_relative("lib/caesar.rb")
 require_relative("lib/vigenere.rb")
 require_relative("lib/railfence.rb")
 require_relative("lib/beaufort.rb")
+require_relative("lib/one_time_pad.rb")
 
 caesar = Caesar.new()
 atbash = Atbash.new()
 vigenere = Vigenere.new()
 railfence = RailFence.new()
 beaufort = Beaufort.new(vigenere,atbash)
+otp = OneTimePad.new(vigenere)
 
 get '/' do
 	erb :ciphers
@@ -81,3 +83,14 @@ post '/railfence' do
 	erb :railfence
 end
 
+get '/one_time_pad' do
+	erb :one_time_pad
+end
+
+post '/one_time_pad' do
+	msg = params['encrypt']
+	otp_values = otp.encrypt(msg)
+	@encrypted = otp_values[0]
+	@key = otp_values[1]
+	erb :one_time_pad
+end
