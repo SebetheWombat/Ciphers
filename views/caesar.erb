@@ -1,5 +1,15 @@
 <%= erb :header %>
 	<h1>Caesar Cipher</h1>
+	<div class="msg-io left-text">
+		<p>Caesar's cipher is a monoalphabetic substitution cipher. Each letter in the alphabet is replaced by a different letter based on a specific key.</p>
+		<p>Text is encrypted by shifting the alphabet by this key number of spaces. So a Caesar shift of 3 would result in "a" becoming "d", "b" becoming "e", and so on.</p>
+		<ul>
+			<li>Plain text: &nbsp;&nbsp;&nbsp;A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</li>
+			<li>Cipher text: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</li>
+		</ul>
+		<p>Using this shift of 3 "Meet me at the secret spot" would be encrypted to "Phhw ph dw wkh vhfuhw vsrw".</p>
+		<p>Give it a try!</p>
+	</div>
 	<form id="caesar" method="post" action="/caesar">
 		<div class="form-group">
 			<label>Enter your secret message here!</label>

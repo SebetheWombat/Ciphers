@@ -1,6 +1,15 @@
 <%= erb :header %>
 	<h1>Atbash Cipher</h1>
-
+	<div class="msg-io left-text">
+		<p>The Atbash cipher is a monoalphabetic substitution cipher. In this cipher the letters in the alphabet are written in reverse order.</p>
+		<p>To encrypt a message using the Atbash cipher a person would map the letter they want to the letter at the same spot in the reversed alphabet.</p>
+		<ul>
+			<li>Plain text: &nbsp;&nbsp;&nbsp;A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</li>
+			<li>Cipher text: Z Y X W V U T S R Q P O N M L K J I H G F E D C B A</li>
+		</ul>
+		<p>"Meet me at the secret spot" would be encrypted to "Nvvg nv zg gsv hvxivg hklg".</p>
+		<p>Give it a try!</p>
+	</div>
 	<form id="atbash" method="post" action="/">
 		<div class="form-group">
 			<label>Enter your secret message here!</label>

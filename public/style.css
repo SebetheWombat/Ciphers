@@ -43,3 +43,7 @@ form{
 	padding:15px;
 	word-wrap: break-word;
 }
+.left-text{
+	text-align: left;
+	font-size: 16px;
+}
