@@ -1,5 +1,24 @@
 <%= erb :header %>
 	<h1>Vigenére Cipher</h1>
+	<div class = "msg-io left-text">
+		<p>The Vigenére cipher is a polyalphabetic substitution cipher. It is similar to the Caesar cipher in that it relies on a key to shift the alphabet for encryption but unlike the Caesar cipher Vigenére uses a key word instead of a single key number.</p>
+		<p>Each letter in the keyword represents a different shift. For example the keyword zebra reprents 5 shifts based on each letter's position in the alphabet.</p>
+		<ul>
+			<li>z --> 25</li>
+			<li>e --> 4</li>
+			<li>b --> 1</li>
+			<li>r --> 17</li>
+			<li>a --> 0</li> 
+		</ul>
+		<p>So Vigenére can be thought of as 5 repeating Caesar ciphers. The message "Meet me at the secret spot" would follow each of the shifts in order.</p>
+		<ul>
+			<li>Key: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zebrazebrazebrazebraz</li>
+			<li>Plain text: &nbsp;&nbsp;&nbsp;Meetmeatthesecretspot</li>
+			<li>Cipher text: Lifkmdeukhdwftrdxtgos</li>
+		</ul>
+		<p>Add back in the spaces and our encrypted message reads: "Lifk md eu khd wftrdx tgos"</p>
+
+	</div>
 	<form id="vigenere" method="post" action="/vigenere">
 		<div class="form-group">
 			<label for="encrypt">Enter your secret message here!</label>
