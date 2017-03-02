@@ -1,5 +1,17 @@
 <%= erb :header %>
 	<h1>Rail Fence Cipher</h1>
+	<div class="msg-io left-text">
+		<p>The rail fence cipher is a transposition cipher. Unlike in a substitution cipher the characters remain unchanged however their position within the message changes.</p>
+		<p>The key in a rail fence cipher is the number of rows over which you decide to write the message. To encrypt the message you write the first letter on the first row, the second letter on the second row, and so on until you reached the maximum number of rows. Then you work your way back up creating a zig-zag like pattern that looks a bit like a picket fence.</p>
+		<p>Below I have encrypted the message "Meet me at the secret spot" using 4 rows.</p>
+		<ul>
+			<li class="mono">M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p</li>
+			<li class="mono">&nbsp;e&nbsp;&nbsp;&nbsp;e&nbsp;t&nbsp;&nbsp;&nbsp;s&nbsp;c&nbsp;&nbsp;&nbsp;s&nbsp;o</li>
+			<li class="mono">&nbsp;&nbsp;e&nbsp;m&nbsp;&nbsp;&nbsp;t&nbsp;e&nbsp;&nbsp;&nbsp;r&nbsp;t&nbsp;&nbsp;&nbsp;t</li>
+			<li class="mono">&nbsp;&nbsp;&nbsp;t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e</li>
+		</ul>
+		<p>The next step is to consolidate the letters to form a sentence using the end of a row as a space. Our message is now "Maep eetscso emtertt the."</p>
+	</div>
 	<form id="railfence" method="post" action="/railfence">
 		<div class="form-group">
 			<label>Enter your secret message here!</label>
