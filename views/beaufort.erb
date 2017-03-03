@@ -1,5 +1,17 @@
 <%= erb :header %>
 	<h1>Beaufort Cipher</h1>
+	<div class = "msg-io left-text">
+		<p>The Beaufort cipher is a polyalphabetic substitution cipher. Traditionally to encrypt a message using the Beaufort cipher you would have an alphabet chart where you would find the intersection of your key letter and plaintext letter and from there you could find your ciphertext letter. This is very similar to a reversed Vigenére cipher and we can use this similarity to come up with method where no charts are necessary.</p>
+		<p>Step 1: Encrypt the key using the Atbash cipher.</p>
+		<p>Step 2: Use this new key to encrpyt your message with Vigenére.</p>
+		<p>Step 3: Further encrypt your results using the Atbash cipher</p>
+		<ul>
+			<li class="mono">Key: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zebrazebrazebrazebraz</li>
+			<li class="mono">Plain text: &nbsp;Meetmeatthesecretspot</li>
+			<li class="mono">Cipher text: Naxyoveiytvmxpjvljcmg</li>
+		</ul>
+		<p>Give it a try!</p>
+	</div>
 	<form id="beaufort" method="post" action="/beaufort">
 		<div class="form-group">
 			<label>Enter your secret message here!</label>
