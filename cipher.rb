@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'json'
 require 'sinatra/reloader' if development?
 require_relative("lib/atbash.rb")
 require_relative("lib/caesar.rb")
@@ -23,7 +24,9 @@ post '/' do
 	if msg != nil
 		@encrypted = atbash.encrypt(msg)
 	end
-	erb :ciphers
+	content_type :json
+	{encrypted: @encrypted}.to_json
+
 end
 
 get '/caesar' do
@@ -32,12 +35,13 @@ end
 
 post '/caesar' do
 	msg = params['encrypt']
-	shifter = params['shift']
+	shifter = params['key']
 	if shifter != ""
 		shifter = shifter.to_i
 		@encrypted = caesar.encrypt(msg, shifter)
 	end
-	erb :caesar
+	content_type :json
+	{encrypted: @encrypted}.to_json
 end
 
 get '/beaufort' do
@@ -52,7 +56,8 @@ post '/beaufort' do
 			@encrypted = beaufort.encrypt(msg, key)
 		end
 	end
-	erb :beaufort
+	content_type :json
+	{encrypted: @encrypted}.to_json
 end
 get '/vigenere' do
 	erb :vigenere
@@ -66,7 +71,8 @@ post '/vigenere' do
 			@encrypted = vigenere.encrypt(msg, key)
 		end
 	end
-	erb :vigenere
+	content_type :json
+	{encrypted: @encrypted}.to_json
 end
 
 get '/railfence' do
@@ -75,12 +81,13 @@ end
 
 post '/railfence' do
 	msg = params['encrypt']
-	rows = params['rows']
+	rows = params['key']
 	if rows != ""
 		rows = rows.to_i
 		@encrypted = railfence.encrypt(msg, rows)
 	end
-	erb :railfence
+	content_type :json
+	{encrypted: @encrypted}.to_json
 end
 
 get '/one_time_pad' do
@@ -92,5 +99,6 @@ post '/one_time_pad' do
 	otp_values = otp.encrypt(msg)
 	@encrypted = otp_values[0]
 	@key = otp_values[1]
-	erb :one_time_pad
+	content_type :json
+	{encrypted: @encrypted, key: @key}.to_json
 end
